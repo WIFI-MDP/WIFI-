@@ -62,8 +62,7 @@ function generateLog(){
         case 4:
 
             question =
-            `f(x)=ln(x²+5x+9)<br>
-            Trouver f'(x)`;
+            `f(x)=ln(x²+5x+9) → f'(x)= ?`;
 
             answer="(2x+5)/(x²+5x+9)";
 
@@ -74,8 +73,7 @@ function generateLog(){
         case 5:
 
             question =
-            `f(x)=x²ln(x)<br>
-            Trouver f'(x)`;
+            `f(x)=x²ln(x) → f'(x)= ?`;
 
             answer="2xln(x)+x";
 
@@ -86,8 +84,7 @@ function generateLog(){
         case 6:
 
             question =
-            `f(x)=e^xln(x)<br>
-            Trouver f'(x)`;
+            `f(x)=e^xln(x) → f'(x)= ?`;
 
             answer="e^xln(x)+e^x/x";
 
@@ -98,8 +95,7 @@ function generateLog(){
         case 7:
 
             question =
-            `f(x)=ln(x)/x<br>
-            Trouver f'(x)`;
+            `f(x)=ln(x)/x → f'(x)= ?`;
 
             answer="(1-ln(x))/x²";
 
@@ -152,7 +148,7 @@ function newChallenge(){
 
 
 
-// Timer
+// Chronomètre
 function startTimer(){
 
     timer=setInterval(()=>{
@@ -196,7 +192,7 @@ function startTimer(){
 
 
 
-// Connexion
+// Bouton connexion
 document.getElementById("connect")
 .addEventListener("click",()=>{
 
@@ -229,7 +225,7 @@ document.getElementById("connect")
 
 
             document.getElementById("result").innerHTML =
-            "📡 Déconnexion du réseau...\n\nMerci d'avoir utilisé le service.";
+            "📡 Déconnexion du réseau...\nMerci d'avoir utilisé le service.";
 
 
             setTimeout(()=>{
@@ -266,17 +262,20 @@ document.getElementById("connect")
 
 
 
-// Retry
+// Bouton réessayer
 document.getElementById("retry")
 .addEventListener("click",()=>{
 
+
     newChallenge();
+
 
 });
 
 
 
 
-// Start
+
+// Démarrage
 generateLog();
 startTimer();
