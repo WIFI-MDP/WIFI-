@@ -1,52 +1,148 @@
 let time = 30;
 let timer;
-let currentAnswer = 0;
+let currentAnswer = "";
 let difficulty = 1;
 
 
-// Création de calculs logarithmiques
-function generateLog() {
+// Génération d'exercices difficiles
+function generateLog(){
 
-    let base;
-    let result;
+    let type = Math.floor(Math.random()*8);
 
-    if (difficulty === 1) {
+    let question;
+    let answer;
 
-        // Niveau facile
-        const easy = [
-            [2,1],
-            [2,2],
-            [2,3],
-            [3,1],
-            [3,2],
-            [5,1],
-            [5,2],
-            [10,1],
-            [10,2]
-        ];
 
-        let pick = easy[Math.floor(Math.random()*easy.length)];
+    switch(type){
 
-        base = pick[0];
-        result = pick[1];
 
-    } else {
+        // Logarithme produit
+        case 0:
 
-        // Niveau plus dur après expiration
-        result = Math.floor(Math.random()*8)+3;
+            let a = Math.floor(Math.random()*5)+2;
+            let b = Math.floor(Math.random()*5)+2;
 
-        base = Math.floor(Math.random()*8)+2;
+            question =
+            `log<sub>${a}</sub>(${Math.pow(a,b)} × ${Math.pow(a,b+2)}) = ?`;
+
+            answer = String(2*b+2);
+
+        break;
+
+
+
+        // Logarithme fraction
+        case 1:
+
+            let n = Math.floor(Math.random()*8)+2;
+
+            question =
+            `log<sub>2</sub>(1/${Math.pow(2,n)}) = ?`;
+
+            answer = String(-n);
+
+        break;
+
+
+
+        // Logarithme puissance
+        case 2:
+
+            let base = Math.floor(Math.random()*6)+2;
+            let expo = Math.floor(Math.random()*7)+3;
+
+            question =
+            `log<sub>${base}</sub>(${Math.pow(base,expo)}) + log<sub>${base}</sub>(${Math.pow(base,expo-1)}) = ?`;
+
+            answer = String(expo + expo - 1);
+
+        break;
+
+
+
+        // Equation logarithmique
+        case 3:
+
+            let value = Math.floor(Math.random()*6)+2;
+
+            question =
+            `Résoudre : log<sub>2</sub>(x) = ${value}`;
+
+            answer = String(Math.pow(2,value));
+
+        break;
+
+
+
+        // Dérivée ln
+        case 4:
+
+            question =
+            `f(x)=ln(x²+4x+7)<br>
+             Trouver f'(x)`;
+
+            answer =
+            "(2x+4)/(x²+4x+7)";
+
+        break;
+
+
+
+        // Dérivée produit
+        case 5:
+
+            question =
+            `f(x)=x³ × ln(x)<br>
+             Trouver f'(x)`;
+
+            answer =
+            "3x²ln(x)+x²";
+
+        break;
+
+
+
+        // Dérivée quotient
+        case 6:
+
+            question =
+            `f(x)=ln(x)/x²<br>
+             Trouver f'(x)`;
+
+            answer =
+            "(1-2ln(x))/x³";
+
+        break;
+
+
+
+        // Dérivée exponentielle
+        case 7:
+
+            question =
+            `f(x)=e^x × ln(x)<br>
+             Trouver f'(x)`;
+
+            answer =
+            "e^xln(x)+e^x/x";
+
+        break;
+
 
     }
 
 
-    currentAnswer = result;
+    currentAnswer = answer
+    .replace(/\s+/g,'')
+    .toLowerCase();
 
 
     document.getElementById("equation").innerHTML =
-    `log<sub>${base}</sub>(${Math.pow(base,result)}) = ?`;
+    question;
 
 }
+
+
 
 
 
@@ -65,11 +161,14 @@ function newChallenge(){
 
     document.getElementById("result").innerHTML = "";
 
+
     generateLog();
 
     startTimer();
 
 }
+
+
 
 
 
@@ -92,9 +191,8 @@ function startTimer(){
 
         if(time <= 0){
 
-            clearInterval(timer);
 
-            difficulty = 2;
+            clearInterval(timer);
 
 
             document.getElementById("result").innerHTML =
@@ -107,6 +205,7 @@ function startTimer(){
 
             },1000);
 
+
         }
 
 
@@ -116,12 +215,18 @@ function startTimer(){
 
 
 
+
+
 // Bouton connexion
-document.getElementById("connect").addEventListener("click",()=>{
+document.getElementById("connect")
+.addEventListener("click",()=>{
 
 
     let answer =
-    Number(document.getElementById("answer").value);
+    document.getElementById("answer")
+    .value
+    .replace(/\s+/g,'')
+    .toLowerCase();
 
 
 
@@ -144,12 +249,16 @@ document.getElementById("connect").addEventListener("click",()=>{
 
         document.getElementById("result").className="fail";
 
+
     }
 
 
     clearInterval(timer);
 
+
 });
+
+
 
 
 
@@ -157,11 +266,13 @@ document.getElementById("connect").addEventListener("click",()=>{
 document.getElementById("retry")
 .addEventListener("click",()=>{
 
-    difficulty = 1;
 
     newChallenge();
 
+
 });
+
+
 
 
 
