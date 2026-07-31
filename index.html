@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connexion Wi-Fi</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="wifi-icon">
+        📶
+    </div>
+
+    <h1>Connexion Wi-Fi</h1>
+
+    <p class="subtitle">
+        Vérification de sécurité requise
+    </p>
+
+    <div class="card">
+
+        <div class="timer">
+            <span id="time">30</span>s
+        </div>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+
+        <h2>Résous le calcul :</h2>
+
+        <div class="equation" id="equation">
+            Chargement...
+        </div>
+
+
+        <input 
+            type="number"
+            id="answer"
+            placeholder="Ta réponse"
+        >
+
+
+        <button id="connect">
+            🔒 Se connecter
+        </button>
+
+
+        <button id="retry">
+            🔄 Réessayer
+        </button>
+
+
+        <div id="result"></div>
+
+    </div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
