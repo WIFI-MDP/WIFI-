@@ -3,47 +3,48 @@
 }
 
 
-html {
-    width: 100%;
-    min-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-
-body {
+html, body {
 
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
 
     margin: 0;
-    padding: 20px;
+    padding: 0;
 
-    overflow-y: auto !important;
-    overflow-x: hidden;
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
 
     background: #050505;
 
     color: white;
 
-    font-family: Arial, sans-serif;
+}
+
+
+
+body {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 10px;
 
 }
+
 
 
 
 .container {
 
     width: 100%;
+
     max-width: 420px;
 
-    margin: auto;
-
-    min-height: 650px;
-
-    height: auto;
-
-    padding: 30px 20px 80px 20px;
+    padding: 15px;
 
     background: #111;
 
@@ -57,29 +58,70 @@ body {
 
 
 
+
 h1 {
 
     color: #008cff;
 
-    font-size: 28px;
+    font-size: 22px;
 
-    margin-bottom: 20px;
+    margin: 5px 0 15px 0;
 
 }
+
+
 
 
 
 #equation {
 
-    font-size: 22px;
+    font-size: 18px;
 
-    margin-top: 30px;
+    margin: 10px 0 15px 0;
 
-    margin-bottom: 30px;
+    min-height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 
     word-break: break-word;
 
 }
+
+
+
+
+
+#time {
+
+    font-size: 18px;
+
+    margin: 5px;
+
+}
+
+
+
+
+
+#progressBar {
+
+    width: 100%;
+
+    height: 8px;
+
+    background: #008cff;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
 
 
 
@@ -87,11 +129,9 @@ input {
 
     width: 100%;
 
-    padding: 15px;
+    padding: 10px;
 
-    font-size: 20px;
-
-    text-align: center;
+    font-size: 18px;
 
     border-radius: 10px;
 
@@ -99,7 +139,11 @@ input {
 
     outline: none;
 
+    text-align: center;
+
 }
+
+
 
 
 
@@ -107,43 +151,49 @@ button {
 
     width: 100%;
 
-    padding: 15px;
+    padding: 10px;
 
-    margin-top: 15px;
-
-    border: none;
+    margin-top: 10px;
 
     border-radius: 10px;
+
+    border: none;
 
     background: #008cff;
 
     color: white;
 
-    font-size: 18px;
+    font-size: 16px;
 
 }
+
+
 
 
 
 button:active {
 
-    transform: scale(0.96);
+    transform: scale(0.97);
 
 }
+
+
 
 
 
 #result {
 
-    margin-top: 30px;
+    margin-top: 10px;
 
-    min-height: 50px;
+    min-height: 35px;
 
-    font-size: 20px;
+    font-size: 16px;
 
-    word-break: break-word;
+    white-space: pre-line;
 
 }
+
+
 
 
 
@@ -155,6 +205,8 @@ button:active {
 
 
 
+
+
 .fail {
 
     color: red;
@@ -163,51 +215,37 @@ button:active {
 
 
 
-#progressBar {
-
-    width: 100%;
-
-    height: 10px;
-
-    background: #008cff;
-
-    border-radius: 10px;
-
-    margin-top: 20px;
-
-}
 
 
-
-#time {
-
-    margin-top: 15px;
-
-    font-size: 20px;
-
-}
-
-
-
-/* Correction spéciale téléphone */
-
-@media screen and (max-width: 600px) {
-
-
-    body {
-
-        align-items: flex-start;
-
-        padding: 15px;
-
-    }
+@media(max-width:500px){
 
 
     .container {
 
-        margin-top: 20px;
+        padding: 12px;
 
-        padding-bottom: 120px;
+    }
+
+
+    h1 {
+
+        font-size: 20px;
+
+    }
+
+
+    #equation {
+
+        font-size: 16px;
+
+    }
+
+
+    button {
+
+        font-size: 15px;
+
+        padding: 9px;
 
     }
 
