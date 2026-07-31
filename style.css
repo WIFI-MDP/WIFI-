@@ -3,33 +3,32 @@
 }
 
 
-html, body {
+html {
     width: 100%;
     min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
     overflow-y: auto;
-    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
-
 
 
 body {
 
-    background: #050505;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    width: 100%;
     min-height: 100vh;
 
+    margin: 0;
     padding: 20px;
 
-}
+    overflow-y: auto !important;
+    overflow-x: hidden;
 
+    background: #050505;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+}
 
 
 
@@ -38,13 +37,17 @@ body {
     width: 100%;
     max-width: 420px;
 
-    min-height: 600px;
+    margin: auto;
 
-    padding: 30px;
+    min-height: 650px;
 
-    border-radius: 20px;
+    height: auto;
+
+    padding: 30px 20px 80px 20px;
 
     background: #111;
+
+    border-radius: 20px;
 
     box-shadow: 0 0 25px #008cff;
 
@@ -54,10 +57,11 @@ body {
 
 
 
-
 h1 {
 
     color: #008cff;
+
+    font-size: 28px;
 
     margin-bottom: 20px;
 
@@ -69,12 +73,13 @@ h1 {
 
     font-size: 22px;
 
-    margin: 30px 0;
+    margin-top: 30px;
 
-    word-wrap: break-word;
+    margin-bottom: 30px;
+
+    word-break: break-word;
 
 }
-
 
 
 
@@ -86,16 +91,15 @@ input {
 
     font-size: 20px;
 
+    text-align: center;
+
     border-radius: 10px;
 
     border: none;
 
     outline: none;
 
-    text-align: center;
-
 }
-
 
 
 
@@ -103,13 +107,13 @@ button {
 
     width: 100%;
 
-    margin-top: 15px;
-
     padding: 15px;
 
-    border-radius: 10px;
+    margin-top: 15px;
 
     border: none;
+
+    border-radius: 10px;
 
     background: #008cff;
 
@@ -123,23 +127,23 @@ button {
 
 button:active {
 
-    transform: scale(0.97);
+    transform: scale(0.96);
 
 }
-
 
 
 
 #result {
 
-    margin-top: 25px;
+    margin-top: 30px;
 
-    font-size: 18px;
+    min-height: 50px;
 
-    min-height: 30px;
+    font-size: 20px;
+
+    word-break: break-word;
 
 }
-
 
 
 
@@ -159,9 +163,9 @@ button:active {
 
 
 
-
-
 #progressBar {
+
+    width: 100%;
 
     height: 10px;
 
@@ -175,10 +179,37 @@ button:active {
 
 
 
-.timer {
+#time {
 
-    margin-top: 10px;
+    margin-top: 15px;
 
-    font-size: 18px;
+    font-size: 20px;
+
+}
+
+
+
+/* Correction spéciale téléphone */
+
+@media screen and (max-width: 600px) {
+
+
+    body {
+
+        align-items: flex-start;
+
+        padding: 15px;
+
+    }
+
+
+    .container {
+
+        margin-top: 20px;
+
+        padding-bottom: 120px;
+
+    }
+
 
 }
