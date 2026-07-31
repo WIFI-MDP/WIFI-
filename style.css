@@ -31,9 +31,10 @@ body {
 
     align-items: center;
 
-    padding: 10px;
+    padding: 8px;
 
 }
+
 
 
 
@@ -42,15 +43,15 @@ body {
 
     width: 100%;
 
-    max-width: 420px;
+    max-width: 400px;
 
-    padding: 15px;
+    padding: 12px;
 
     background: #111;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
-    box-shadow: 0 0 25px #008cff;
+    box-shadow: 0 0 20px #008cff;
 
     text-align: center;
 
@@ -59,13 +60,14 @@ body {
 
 
 
+
 h1 {
 
     color: #008cff;
 
-    font-size: 22px;
+    font-size: 20px;
 
-    margin: 5px 0 15px 0;
+    margin: 3px 0 8px 0;
 
 }
 
@@ -75,11 +77,13 @@ h1 {
 
 #equation {
 
-    font-size: 18px;
+    font-size: 15px;
 
-    margin: 10px 0 15px 0;
+    margin: 5px 0 8px 0;
 
-    min-height: 45px;
+    min-height: 35px;
+
+    line-height: 1.1;
 
     display: flex;
 
@@ -97,9 +101,9 @@ h1 {
 
 #time {
 
-    font-size: 18px;
+    font-size: 16px;
 
-    margin: 5px;
+    margin: 3px;
 
 }
 
@@ -111,13 +115,13 @@ h1 {
 
     width: 100%;
 
-    height: 8px;
+    height: 6px;
 
     background: #008cff;
 
     border-radius: 10px;
 
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 
 }
 
@@ -129,11 +133,11 @@ input {
 
     width: 100%;
 
-    padding: 10px;
+    padding: 8px;
 
-    font-size: 18px;
+    font-size: 16px;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     border: none;
 
@@ -151,11 +155,11 @@ button {
 
     width: 100%;
 
-    padding: 10px;
+    padding: 8px;
 
-    margin-top: 10px;
+    margin-top: 7px;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     border: none;
 
@@ -163,7 +167,7 @@ button {
 
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
 
 }
 
@@ -183,11 +187,13 @@ button:active {
 
 #result {
 
-    margin-top: 10px;
+    margin-top: 5px;
 
-    min-height: 35px;
+    min-height: 25px;
 
-    font-size: 16px;
+    font-size: 14px;
+
+    line-height: 1.1;
 
     white-space: pre-line;
 
@@ -222,30 +228,37 @@ button:active {
 
     .container {
 
-        padding: 12px;
+        padding: 10px;
 
     }
 
 
     h1 {
 
-        font-size: 20px;
+        font-size: 18px;
 
     }
 
 
     #equation {
 
-        font-size: 16px;
+        font-size: 14px;
+
+    }
+
+
+    input {
+
+        padding: 7px;
 
     }
 
 
     button {
 
-        font-size: 15px;
+        padding: 7px;
 
-        padding: 9px;
+        font-size: 14px;
 
     }
 
