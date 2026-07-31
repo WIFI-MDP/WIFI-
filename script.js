@@ -127,9 +127,9 @@ function newChallenge(){
 
     clearInterval(timer);
 
-    time=30;
+    time = 30;
 
-    document.getElementById("time").textContent=time;
+    document.getElementById("time").textContent = time;
 
     document.getElementById("progressBar").style.width="100%";
 
@@ -148,7 +148,7 @@ function newChallenge(){
 
 
 
-// Chronomètre
+// Timer
 function startTimer(){
 
     timer=setInterval(()=>{
@@ -225,7 +225,12 @@ document.getElementById("connect")
 
 
             document.getElementById("result").innerHTML =
-            "📡 Déconnexion du réseau...\nMerci d'avoir utilisé le service.";
+            "📡 Déconnexion du réseau...<br>Merci d'avoir utilisé le service.";
+
+
+            document.getElementById("result")
+            .className="";
+
 
 
             setTimeout(()=>{
